@@ -16,7 +16,6 @@ namespace MarkdownGraphTest
             _markdownFileParser = new MarkdownFileParser();
         }
 
-
         [Fact]
         public void MarkdownParser_ReturnsConnectedMdFiles()
         {

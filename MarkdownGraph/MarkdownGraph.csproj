@@ -81,6 +81,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MarkdownFileParser.cs" />
+    <Compile Include="Edge.cs" />
+    <Compile Include="IMarkdownTraverser.cs" />
+    <Compile Include="Node.cs" />
+    <Compile Include="NodeEdgeCreator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
