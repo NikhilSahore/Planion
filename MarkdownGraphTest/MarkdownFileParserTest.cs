@@ -10,15 +10,22 @@ namespace MarkdownGraphTest
 {
     public class MarkdownFileParserTest
     {
-        [Fact]
-        public static void MarkdownParser_ReturnsXML()
+        private MarkdownFileParser _markdownFileParser;
+        public MarkdownFileParserTest()
         {
-            string rootFolderPath = @"C:\Test\Markdown\";
-            MarkdownFileParser markdownFileParser = new MarkdownFileParser();
+            _markdownFileParser = new MarkdownFileParser();
+        }
 
-            var result = markdownFileParser.ParseMarkdown(rootFolderPath);
 
-            Assert.Equal("Test",result);
+        [Fact]
+        public void MarkdownParser_ReturnsConnectedMdFiles()
+        {
+            var inputFile = @"C:\Nikhil\Learning\MarkdownGraph\Planion\MarkdownGraph\docs\ReadMe.md";
+
+            var result = _markdownFileParser.ParseMarkdownFile(inputFile);
+
+            var expectedMdFiles = new List<string> { "Basics", "Filters","Hello", "Development" };
+            Assert.Equal(expectedMdFiles, result);
         }
     }
 }
